@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PZNA01_01AndroidDasar</string>
+    <string name="name">Nama</string>
+    <string name="say_hello">Katakan Halo</string>
+    <string name="say_hello_textView">Halo %1$s</string>
+</resources>

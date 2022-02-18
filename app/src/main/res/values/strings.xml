@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">PZNA01_01AndroidDasar</string>
+    <string name="name">Name</string>
+    <string name="say_hello">Say Hello</string>
+    <string name="say_hello_textView">Hello %1$s</string>
+    <string-array name="names">
+        <item>Roy</item>
+        <item>Naldi</item>
+        <item>Kidd</item>
+    </string-array>
+</resources>
