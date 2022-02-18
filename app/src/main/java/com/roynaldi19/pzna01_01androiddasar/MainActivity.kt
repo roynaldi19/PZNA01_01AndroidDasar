@@ -1,5 +1,6 @@
 package com.roynaldi19.pzna01_01androiddasar
 
+import android.content.pm.PackageManager
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -21,6 +22,20 @@ class MainActivity : AppCompatActivity() {
         sayHelloTextView = findViewById(R.id.tv_sayHello)
     }
 
+    private fun checkFingerPrint(){
+        if(packageManager.hasSystemFeature(PackageManager.FEATURE_FINGERPRINT)){
+            Log.i("FEATURE", "Fingerprint ON")
+        } else{
+            Log.i("FEATURE", "Fingerprint OF")
+        }
+    }
+
+    private fun printHello(name: String){
+        Log.i("DEBUG", name)
+    }
+
+
+
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,15 +43,26 @@ class MainActivity : AppCompatActivity() {
 
         initComponent()
 
+        checkFingerPrint()
+
         sayHelloTextView.text = resources.getString(R.string.app_name)
 
         sayHelloButton.setOnClickListener{
+
+            val firstName = "Roy"
+            printHello(firstName)
+
+            val sample = resources.openRawResource(R.raw.sample)
+                .bufferedReader()
+                .use { it.readText() }
 
             val json = assets.open("sample.json")
                 .bufferedReader()
                 .use { it.readText() }
 
             Log.i("ASSET", json)
+            Log.i("RAW", sample)
+
 
             Log.d("PZN", "this is debug log")
             Log.i("PZN", "this is info log")
