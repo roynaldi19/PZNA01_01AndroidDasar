@@ -11,7 +11,6 @@ import android.widget.TextView
 import androidx.annotation.RequiresApi
 
 class MainActivity : AppCompatActivity() {
-
     private lateinit var nameEditText: EditText
     private lateinit var sayHelloButton: Button
     private lateinit var sayHelloTextView: TextView
@@ -34,8 +33,6 @@ class MainActivity : AppCompatActivity() {
         Log.i("DEBUG", name)
     }
 
-
-
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,7 +45,6 @@ class MainActivity : AppCompatActivity() {
         sayHelloTextView.text = resources.getString(R.string.app_name)
 
         sayHelloButton.setOnClickListener{
-
             val firstName = "Roy"
             printHello(firstName)
 
@@ -62,7 +58,6 @@ class MainActivity : AppCompatActivity() {
 
             Log.i("ASSET", json)
             Log.i("RAW", sample)
-
 
             Log.d("PZN", "this is debug log")
             Log.i("PZN", "this is info log")
